@@ -1,0 +1,1 @@
+{"name":"Local: Brain's_Photo","url":"d:\\C++\\Brain's_Photo.cpp","tests":[{"id":1641659492165,"input":"2 2\nC M\nY Y\n","output":"#Color"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\Brain's_Photo.cpp","group":"local","local":true}

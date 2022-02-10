@@ -1,0 +1,1 @@
+{"name":"Local: BearandBigBrother","url":"d:\\C++\\BearandBigBrother.cpp","tests":[{"id":1641649678524,"input":"4 7","output":"2"},{"id":1641649840473,"input":"4 9","output":"3"},{"id":1641649841992,"input":"1 1","output":"1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++\\BearandBigBrother.cpp","group":"local","local":true}
