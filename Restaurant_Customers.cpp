@@ -30,7 +30,7 @@ cin>>n;
 
     int actualCustomers=0;
     int maxCustomers=0;
-    for(int i=0;i<n;i++){
+    for(int i=0;i<p.size();i++){
         actualCustomers+=p[i].second;
         maxCustomers=max(maxCustomers,actualCustomers);
     }
