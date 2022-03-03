@@ -18,34 +18,29 @@ cin.tie(0);
 int t;
 cin>>t;
 while(t--){
-ll n;
+int n;
 cin>>n;
 
-int a[n];
-
+vector <int> v(n);
+ll sum=0;
 for(int i=0;i<n;i++){
-    cin>>a[i];
+    cin>>v[i];
+    sum+=v[i];
 }
 
-vector <bool> chk(31);
-
+int answer=sum;
+int pref=0;
+int remaining;
+int req_time;
 for(int i=0;i<n;i++){
-    for(int j=0;j<31;j++){
-        if(a[i] & (1<<j)){
-            chk[j]=true;
-        }
-    }
+    pref+=v[i];
+    remaining=sum-pref;
+    req_time=max(remaining,pref);
+    answer=min(req_time,answer);
 }
-
-int answer=0;
-
-for(int i=0;i<31;i++){
-    if(chk[i]){
-        answer+=(1<<i);
-    }
-}
-
 cout<<answer<<"\n";
+
+
 
 }
 return 0;

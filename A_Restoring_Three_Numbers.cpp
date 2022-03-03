@@ -15,18 +15,14 @@ int main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(0);
-int t;
-cin>>t;
-while(t--){
-int n;
-cin>>n;
+vector <ll> v(4);
+for(int i=0;i<4;i++){
+    cin>>v[i];
+}
+sort(v.begin(),v.end());
 
-vector <int> v;
-
-for(int i=0;i<n;i++)
-cin>>v[i];
-
-
+for(int i=0;i<3;i++){
+    cout<<v[3]-v[i]<<" ";
 }
 return 0;
 }

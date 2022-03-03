@@ -15,38 +15,15 @@ int main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(0);
-int t;
-cin>>t;
-while(t--){
 ll n;
 cin>>n;
 
-int a[n];
-
-for(int i=0;i<n;i++){
-    cin>>a[i];
+if(n%2==0){
+    cout<<4<<" "<<n-4;
+}
+else{
+    cout<<9<<" "<<n-9;
 }
 
-vector <bool> chk(31);
-
-for(int i=0;i<n;i++){
-    for(int j=0;j<31;j++){
-        if(a[i] & (1<<j)){
-            chk[j]=true;
-        }
-    }
-}
-
-int answer=0;
-
-for(int i=0;i<31;i++){
-    if(chk[i]){
-        answer+=(1<<i);
-    }
-}
-
-cout<<answer<<"\n";
-
-}
 return 0;
 }

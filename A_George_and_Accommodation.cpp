@@ -15,38 +15,16 @@ int main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(0);
-int t;
-cin>>t;
-while(t--){
-ll n;
+int n;
 cin>>n;
-
-int a[n];
-
+int count=0;
 for(int i=0;i<n;i++){
-    cin>>a[i];
-}
-
-vector <bool> chk(31);
-
-for(int i=0;i<n;i++){
-    for(int j=0;j<31;j++){
-        if(a[i] & (1<<j)){
-            chk[j]=true;
-        }
+    int available,cap;
+    cin>>available>>cap;
+    if(cap-available>=2){
+        count++;
     }
 }
-
-int answer=0;
-
-for(int i=0;i<31;i++){
-    if(chk[i]){
-        answer+=(1<<i);
-    }
-}
-
-cout<<answer<<"\n";
-
-}
+cout<<count;
 return 0;
 }

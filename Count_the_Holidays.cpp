@@ -18,35 +18,21 @@ cin.tie(0);
 int t;
 cin>>t;
 while(t--){
-ll n;
-cin>>n;
+int fd;
+cin>>fd;
 
-int a[n];
+vector <int> v(fd);
 
-for(int i=0;i<n;i++){
-    cin>>a[i];
-}
 
-vector <bool> chk(31);
 
-for(int i=0;i<n;i++){
-    for(int j=0;j<31;j++){
-        if(a[i] & (1<<j)){
-            chk[j]=true;
-        }
+int holiday=8+fd;
+for(int i=0;i<fd;i++){
+    cin>>v[i];
+    if(v[i]==6 || v[i]==7 || v[i]==13 || v[i]==14 ||v[i]==20 ||v[i]==21 || v[i]==27 ||v[i]==28){
+        holiday--;
     }
 }
-
-int answer=0;
-
-for(int i=0;i<31;i++){
-    if(chk[i]){
-        answer+=(1<<i);
-    }
-}
-
-cout<<answer<<"\n";
-
+cout<<holiday<<"\n";
 }
 return 0;
 }

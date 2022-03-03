@@ -20,33 +20,22 @@ cin>>t;
 while(t--){
 ll n;
 cin>>n;
-
-int a[n];
-
+ll mini=LONG_LONG_MAX;
+ll count=0;
+vector <ll> v(n);
 for(int i=0;i<n;i++){
-    cin>>a[i];
-}
-
-vector <bool> chk(31);
-
-for(int i=0;i<n;i++){
-    for(int j=0;j<31;j++){
-        if(a[i] & (1<<j)){
-            chk[j]=true;
-        }
+    cin>>v[i];
     }
-}
 
-int answer=0;
-
-for(int i=0;i<31;i++){
-    if(chk[i]){
-        answer+=(1<<i);
+ for(int i=n-1;i>=0;i--){
+    if(v[i]>mini){
+        count++;
+       
     }
+     mini=min(mini,v[i]);
 }
 
-cout<<answer<<"\n";
-
+cout<<count<<"\n";
 }
 return 0;
 }

@@ -15,38 +15,24 @@ int main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(0);
-int t;
-cin>>t;
-while(t--){
-ll n;
+int n;
 cin>>n;
 
-int a[n];
-
+vector <int> v(n);
+int maximum=INT_MIN;
 for(int i=0;i<n;i++){
-    cin>>a[i];
-}
-
-vector <bool> chk(31);
-
-for(int i=0;i<n;i++){
-    for(int j=0;j<31;j++){
-        if(a[i] & (1<<j)){
-            chk[j]=true;
-        }
+    cin>>v[i];
+    if(v[i]>maximum){
+        maximum=v[i];
     }
 }
 
-int answer=0;
-
-for(int i=0;i<31;i++){
-    if(chk[i]){
-        answer+=(1<<i);
-    }
+sort(v.rbegin(),v.rend());
+int sum=0;
+for(int i=1;i<n;i++){
+    sum+=(maximum-v[i]);
 }
 
-cout<<answer<<"\n";
-
-}
+cout<<sum;
 return 0;
 }

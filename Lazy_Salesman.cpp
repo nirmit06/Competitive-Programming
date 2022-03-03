@@ -18,34 +18,23 @@ cin.tie(0);
 int t;
 cin>>t;
 while(t--){
-ll n;
-cin>>n;
-
-int a[n];
-
+int n,w;
+cin>>n>>w;
+vector <ll> v(n);
 for(int i=0;i<n;i++){
-    cin>>a[i];
+    cin>>v[i];
+}
+sort(v.begin(),v.end(),greater<ll>());
+ll sum=0;
+ll count=0;
+ll i=0;
+while(sum<w){
+    sum+=v[i];
+    count++;
+    i++;
 }
 
-vector <bool> chk(31);
-
-for(int i=0;i<n;i++){
-    for(int j=0;j<31;j++){
-        if(a[i] & (1<<j)){
-            chk[j]=true;
-        }
-    }
-}
-
-int answer=0;
-
-for(int i=0;i<31;i++){
-    if(chk[i]){
-        answer+=(1<<i);
-    }
-}
-
-cout<<answer<<"\n";
+cout<<n-count<<"\n";
 
 }
 return 0;

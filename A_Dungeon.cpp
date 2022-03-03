@@ -18,35 +18,20 @@ cin.tie(0);
 int t;
 cin>>t;
 while(t--){
-ll n;
-cin>>n;
-
-int a[n];
-
-for(int i=0;i<n;i++){
-    cin>>a[i];
+ll a,b,c;
+cin>>a>>b>>c;
+ll k=(a+b+c)/9;
+if((a+b+c)%9!=0){
+    cout<<"NO"<<"\n";
 }
-
-vector <bool> chk(31);
-
-for(int i=0;i<n;i++){
-    for(int j=0;j<31;j++){
-        if(a[i] & (1<<j)){
-            chk[j]=true;
-        }
+else{
+    if(min({a,b,c})>=floor((a+b+c)/9)){
+        cout<<"YES"<<"\n";
+    }
+    else{
+        cout<<"NO"<<"\n";
     }
 }
-
-int answer=0;
-
-for(int i=0;i<31;i++){
-    if(chk[i]){
-        answer+=(1<<i);
-    }
-}
-
-cout<<answer<<"\n";
-
 }
 return 0;
 }

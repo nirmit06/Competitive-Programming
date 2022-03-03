@@ -15,18 +15,16 @@ int main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(0);
-int t;
-cin>>t;
-while(t--){
-int n;
-cin>>n;
 
-vector <int> v;
+ll x,y;
+cin>>x>>y;
 
-for(int i=0;i<n;i++)
-cin>>v[i];
+ll twice=y/2;
+ll left=x-y;
+
+ll sum=left+twice;
+cout<<sum;
 
 
-}
 return 0;
 }

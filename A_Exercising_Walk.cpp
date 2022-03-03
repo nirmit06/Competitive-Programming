@@ -18,35 +18,31 @@ cin.tie(0);
 int t;
 cin>>t;
 while(t--){
-ll n;
-cin>>n;
+int l,r,d,u;
+cin>>l>>r>>d>>u;
 
-int a[n];
-
-for(int i=0;i<n;i++){
-    cin>>a[i];
+int x,y,xl,yd,xr,yu;
+cin>>x>>y>>xl>>yd>>xr>>yu;
+int ans=1;
+if(r-l > xr -x || l-r >x-xl){
+    ans=0;
 }
-
-vector <bool> chk(31);
-
-for(int i=0;i<n;i++){
-    for(int j=0;j<31;j++){
-        if(a[i] & (1<<j)){
-            chk[j]=true;
-        }
+if(u-d > yu-y || d-u>y-yd){
+    ans=0;
+}
+if(xl==xr && (l+r)>0){
+    ans=0;
     }
-}
-
-int answer=0;
-
-for(int i=0;i<31;i++){
-    if(chk[i]){
-        answer+=(1<<i);
+if(yd==yu && (d+u)>0){
+    ans=0;
     }
+
+if(ans==1){
+    cout<<"Yes"<<"\n";
 }
-
-cout<<answer<<"\n";
-
+else{
+    cout<<"No"<<"\n";
+}
 }
 return 0;
 }

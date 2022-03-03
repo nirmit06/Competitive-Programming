@@ -15,38 +15,23 @@ int main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(0);
-int t;
-cin>>t;
-while(t--){
-ll n;
-cin>>n;
+int n,m;
+cin>>n>>m;
+vector<pair<string,int>> v;
+for(int i=0;i<n;i++){
+    string s;
+    cin>>s;
+    for(int i=1;i<=m;i+=2){
+        char temp=s[i]-65;
+        s[i]=90-temp;
+    }
+    v.push_back(make_pair(s,i+1));
+}
 
-int a[n];
+sort(v.begin(),v.end());
 
 for(int i=0;i<n;i++){
-    cin>>a[i];
-}
-
-vector <bool> chk(31);
-
-for(int i=0;i<n;i++){
-    for(int j=0;j<31;j++){
-        if(a[i] & (1<<j)){
-            chk[j]=true;
-        }
-    }
-}
-
-int answer=0;
-
-for(int i=0;i<31;i++){
-    if(chk[i]){
-        answer+=(1<<i);
-    }
-}
-
-cout<<answer<<"\n";
-
+    cout<<v[i].second<<" ";
 }
 return 0;
 }

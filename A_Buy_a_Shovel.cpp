@@ -15,18 +15,22 @@ int main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(0);
-int t;
-cin>>t;
-while(t--){
-int n;
-cin>>n;
+int k,r;
+cin>>k>>r;
+int sum=k;
+ll count=1;
 
-vector <int> v;
+for(int i=1;i<1e9;i++){
+    
+    int required=(sum)%10-r;
 
-for(int i=0;i<n;i++)
-cin>>v[i];
-
-
+    // cout<<sum<<"\n";
+    if(required==0 || sum%10==0){
+        break;
+    }
+    count++;
+    sum+=k;
 }
+cout<<count;
 return 0;
 }

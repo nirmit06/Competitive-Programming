@@ -15,18 +15,19 @@ int main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(0);
-int t;
-cin>>t;
-while(t--){
-int n;
-cin>>n;
-
-vector <int> v;
-
-for(int i=0;i<n;i++)
-cin>>v[i];
-
-
+string s;
+cin>>s;
+ll count=0;
+for(int i=0;i<s.size();i++){
+    if(s[i]=='4' || s[i]=='7'){
+        count++;
+    }
+}
+if(count==4 || count==7){
+    cout<<"YES";
+}
+else{
+    cout<<"NO";
 }
 return 0;
 }

@@ -18,35 +18,18 @@ cin.tie(0);
 int t;
 cin>>t;
 while(t--){
-ll n;
-cin>>n;
+double x1,x2,y1,y2;
+cin>>x1>>x2>>y1>>y2;
 
-int a[n];
-
-for(int i=0;i<n;i++){
-    cin>>a[i];
+if(double(y1/x1)==double(y2/x2)){
+    cout<<0<<"\n";
 }
-
-vector <bool> chk(31);
-
-for(int i=0;i<n;i++){
-    for(int j=0;j<31;j++){
-        if(a[i] & (1<<j)){
-            chk[j]=true;
-        }
-    }
+else if(double(y1/x1)>double(y2/x2)){
+    cout<<1<<"\n";
 }
-
-int answer=0;
-
-for(int i=0;i<31;i++){
-    if(chk[i]){
-        answer+=(1<<i);
-    }
+else if(double(y1/x1)<double(y2/x2)){
+    cout<<-1<<"\n";
 }
-
-cout<<answer<<"\n";
-
 }
 return 0;
 }

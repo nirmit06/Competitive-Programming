@@ -21,32 +21,11 @@ while(t--){
 ll n;
 cin>>n;
 
-int a[n];
+set<ll> s;
 
-for(int i=0;i<n;i++){
-    cin>>a[i];
-}
-
-vector <bool> chk(31);
-
-for(int i=0;i<n;i++){
-    for(int j=0;j<31;j++){
-        if(a[i] & (1<<j)){
-            chk[j]=true;
-        }
-    }
-}
-
-int answer=0;
-
-for(int i=0;i<31;i++){
-    if(chk[i]){
-        answer+=(1<<i);
-    }
-}
-
-cout<<answer<<"\n";
-
+for(int i=1;i*i<=n;i++) s.insert(i*i);
+for(int i=1;i*i*i<=n;i++) s.insert(i*i*i);
+cout<<s.size()<<"\n";
 }
 return 0;
 }

@@ -18,35 +18,24 @@ cin.tie(0);
 int t;
 cin>>t;
 while(t--){
-ll n;
+int n;
 cin>>n;
 
-int a[n];
-
-for(int i=0;i<n;i++){
-    cin>>a[i];
+if(n==2){
+    cout<<"-1"<<"\n";
 }
-
-vector <bool> chk(31);
-
-for(int i=0;i<n;i++){
-    for(int j=0;j<31;j++){
-        if(a[i] & (1<<j)){
-            chk[j]=true;
-        }
+else if(n%2){
+    for(int i=1;i<=n;i++){
+        cout<<i<<" ";
     }
 }
-
-int answer=0;
-
-for(int i=0;i<31;i++){
-    if(chk[i]){
-        answer+=(1<<i);
+else{
+    cout<<"2 1 3 4 ";
+    for(int i=5;i<=n;i++){
+        cout<<i<<" ";
     }
 }
-
-cout<<answer<<"\n";
-
+cout<<"\n";
 }
 return 0;
 }

@@ -15,18 +15,21 @@ int main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(0);
-int t;
-cin>>t;
-while(t--){
-int n;
-cin>>n;
+ll n,k;
+cin>>n>>k;
 
-vector <int> v;
-
-for(int i=0;i<n;i++)
-cin>>v[i];
-
-
+int remaining=240-k;
+int count=0;
+int i=1;
+while(remaining>0 && n>0){
+    if(5*i<=remaining){
+    remaining-=5*i;
+    count++;
+    i++;
+    n--;
+    }
+    else{break;}
 }
+cout<<count;
 return 0;
 }
