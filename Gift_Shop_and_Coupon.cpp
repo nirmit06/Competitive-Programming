@@ -20,29 +20,24 @@ cin>>t;
 while(t--){
 ll n,k;
 cin>>n>>k;
+ll arr[n];
+ll ans=n,sum=0;
+for(int i=0;i<n;i++){
+    cin>>arr[i];
+}
 
-vector <ll> v(n);
+sort(arr,arr+n);
 
 for(int i=0;i<n;i++){
-    cin>>v[i];
-}
-
-if(v[n-1]%2!=0){
-    if(v[n-2]==v[n-1]-1){
-        v[n-2]=v[n-2]/2;
+    if(sum+(arr[i]+1)/2>k){
+        ans=i;
+        break;
     }
+    sum+=arr[i];
 }
 
-ll count=0;
-ll sum=0;
-ll i=0;
-while(sum<k && count!=n){
-    sum+=v[i];
-    count++;
-    i++;
-}
+cout<<ans<<"\n";
 
-cout<<count<<"\n";
 }
 return 0;
 }

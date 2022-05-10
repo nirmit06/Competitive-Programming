@@ -24,7 +24,6 @@ for(int i=1;i<1e9;i++){
     
     int required=(sum)%10-r;
 
-    // cout<<sum<<"\n";
     if(required==0 || sum%10==0){
         break;
     }

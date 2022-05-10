@@ -11,6 +11,8 @@
         "chrono": "cpp",
         "cmath": "cpp",
         "valarray": "cpp",
-        "bitset": "cpp"
+        "bitset": "cpp",
+        "set": "cpp",
+        "numeric": "cpp"
     }
 }

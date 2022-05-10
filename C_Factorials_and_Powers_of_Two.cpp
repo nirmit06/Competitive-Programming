@@ -35,14 +35,28 @@ while(fact*j<=n){
     j++;
 }
 
-for(int i=0;i<7;i++){
-    cout<<square[i]<<" ";
+set <ll> final;
+ll sum=0;
+for(int i=0;i<square.size();i++){
+    final.insert(square[i]);
 }
-cout<<endl;
-for(int i=0;i<7;i++){
-    cout<<factorial[i]<<" ";
+for(int i=0;i<factorial.size();i++){
+    final.insert(factorial[i]);
 }
-cout<<endl;
+
+for(auto x:final){
+    sum+=x;
+}
+
+
+// for(int i=0;i<7;i++){
+//     cout<<square[i]<<" ";
+// }
+// cout<<endl;
+// for(int i=0;i<7;i++){
+//     cout<<factorial[i]<<" ";
+// }
+// cout<<endl;
 }
 return 0;
 }
