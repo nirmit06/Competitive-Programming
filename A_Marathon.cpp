@@ -17,22 +17,20 @@ ios_base::sync_with_stdio(false);
 cin.tie(0);
 int t;
 cin>>t;
-while(t--)
-{
-    cout << fixed << setprecision(10);
-    int n;
-    cin >> n;
-		vector<int> v(n);
-		for (int i = 0; i < n; i++)
-			cin >> v[i];
-		int mx = v[0];
-		long long sum = 0;
-		for (int i = 0; i < n; i++) {
-			if (v[i] > mx)
-				mx = v[i];
-			sum += v[i];
-		}
-		cout << 1.0 * (sum - mx) / (n - 1) + mx << endl;
+while(t--){
+int arr[4];
+
+for(int i=0;i<4;i++){
+    cin>>arr[i];
+}
+int temp=arr[0];
+int count=0;
+for(int i=1;i<4;i++){
+    if(arr[i]>temp){
+        count++;
+    }
+}
+cout<<count<<"\n";
 }
 return 0;
 }

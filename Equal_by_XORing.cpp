@@ -11,28 +11,34 @@ bool isPrime(int n)
             return false;
     return true;
 }
+
 int main()
 {
 ios_base::sync_with_stdio(false);
 cin.tie(0);
 int t;
 cin>>t;
-while(t--)
-{
-    cout << fixed << setprecision(10);
-    int n;
-    cin >> n;
-		vector<int> v(n);
-		for (int i = 0; i < n; i++)
-			cin >> v[i];
-		int mx = v[0];
-		long long sum = 0;
-		for (int i = 0; i < n; i++) {
-			if (v[i] > mx)
-				mx = v[i];
-			sum += v[i];
-		}
-		cout << 1.0 * (sum - mx) / (n - 1) + mx << endl;
+while(t--){
+ll a,b,n;
+cin>>a>>b>>n;
+
+ll cur=0;
+int count=0;
+
+if(a^b==0){
+    cout<<0<<"\n";
+}
+else if(a^b>=1 && a^b<n){
+    cout<<1<<"\n";
+}
+else{
+    if(a^n-1>=1 && a^b<n){
+        cout<<2<<"\n";
+    }
+    else{
+        cout<<-1<<"\n";
+    }
+}
 }
 return 0;
 }

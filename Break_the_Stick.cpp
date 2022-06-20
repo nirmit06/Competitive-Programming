@@ -17,22 +17,23 @@ ios_base::sync_with_stdio(false);
 cin.tie(0);
 int t;
 cin>>t;
-while(t--)
-{
-    cout << fixed << setprecision(10);
-    int n;
-    cin >> n;
-		vector<int> v(n);
-		for (int i = 0; i < n; i++)
-			cin >> v[i];
-		int mx = v[0];
-		long long sum = 0;
-		for (int i = 0; i < n; i++) {
-			if (v[i] > mx)
-				mx = v[i];
-			sum += v[i];
-		}
-		cout << 1.0 * (sum - mx) / (n - 1) + mx << endl;
+while(t--){
+ int n;
+ cin>>n;
+ int x;
+ cin>>x;
+
+ if((n%2==0 && x%2==0) || (n%2!=0 && x%2!=0)){
+     cout<<"YES"<<"\n";
+ }
+ else{
+     if(x%2==0){
+         cout<<"NO"<<"\n";
+     }
+     else{
+         cout<<"YES"<<"\n";
+     }
+ }
 }
 return 0;
 }

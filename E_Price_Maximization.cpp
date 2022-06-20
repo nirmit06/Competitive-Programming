@@ -17,22 +17,34 @@ ios_base::sync_with_stdio(false);
 cin.tie(0);
 int t;
 cin>>t;
-while(t--)
-{
-    cout << fixed << setprecision(10);
-    int n;
-    cin >> n;
-		vector<int> v(n);
-		for (int i = 0; i < n; i++)
-			cin >> v[i];
-		int mx = v[0];
-		long long sum = 0;
-		for (int i = 0; i < n; i++) {
-			if (v[i] > mx)
-				mx = v[i];
-			sum += v[i];
-		}
-		cout << 1.0 * (sum - mx) / (n - 1) + mx << endl;
+while(t--){
+int n,k;
+cin>>n>>k;
+vector<ll> waste;
+ll ans=0;
+for(int i=0;i<n;i++){
+    int x;
+    cin>>x;
+    ans+=x/k;
+    waste.push_back(x%k);
+}
+
+ll s=0,e=n-1;
+
+sort(waste.begin(),waste.end());
+
+while(s<e){
+    if(waste[s]+waste[e]>=k){
+        ans++;
+        s++;
+        e--;
+    }
+    else{
+        s++;
+    }
+
+}
+cout<<ans<<"\n";
 }
 return 0;
 }
