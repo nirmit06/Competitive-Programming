@@ -13,6 +13,7 @@
         "valarray": "cpp",
         "bitset": "cpp",
         "set": "cpp",
-        "numeric": "cpp"
+        "numeric": "cpp",
+        "complex": "cpp"
     }
 }
